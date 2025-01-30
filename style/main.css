@@ -2,14 +2,29 @@ html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, black, 0%, white 100%);
+  color: #333;
+  overflow-x: hidden;
 }
+
 img {
   max-width: 60%;
   height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .song {
   visibility: hidden;
 }
@@ -32,16 +47,22 @@ img {
 }
 
 .one {
+  font-family: 'Poppins', sans-serif;
   font-size: 3.5rem;
+  color: #555;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .two {
   font-size: 1rem;
   font-weight: lighter;
+  color: #555;
 }
 
 .three {
   font-size: 3rem;
+  color: #555;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .four .text-box {
@@ -51,11 +72,14 @@ img {
   padding: 10px;
   position: relative;
   width: 600px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .text-box p {
   margin: 0;
   text-align: left;
+  color: #555;
 }
 
 .text-box span {
@@ -67,10 +91,16 @@ img {
   border-radius: 3px;
   bottom: 50px;
   color: #fff;
-  padding: .3rem .3rem;
+  padding: 0.3rem 0.3rem;
   position: absolute;
   margin-top: 10px;
   right: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.text-box .fake-btn:hover {
+  background-color: rgb(16, 123, 182);
 }
 
 .five p {
@@ -78,26 +108,31 @@ img {
   left: 0;
   position: absolute;
   right: 0;
+  color: #555;
 }
 
 .idea-3 strong {
   border-radius: 3px;
   display: inline-block;
   padding: 3px 5px;
+  background: #ff6f61;
+  color: #fff;
 }
 
 .five .idea-5 {
   font-size: 1rem;
 }
 
-.idea-5 span, .idea-6 span, .wish-hbd span {
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
   display: inline-block;
 }
 
-.idea-6 span{
+.idea-6 span {
   font-size: 15rem;
+  color: #ff6f61;
 }
-
 
 .six {
   position: relative;
@@ -109,35 +144,30 @@ img {
   display: inline-block;
   height: 350px;
   max-width: 100%;
-  /* height: auto; */
 }
 
 .six .hat {
   left: 41.5%;
   position: absolute;
-  /* transform: scale(0.1); */
-  top: -35%;
-  width: 80px;
+  
 }
 
-.baloons img {
-  display: inline-block;
-  position: absolute;
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.baloons img:nth-child(even) {
-  left: -10%;
-}
 
-.baloons img:nth-child(odd) {
-  right: -10%;
-}
-
-.baloons img:nth-child(3n + 0) {
-  left: 30%;
-}
-
-.seven, .eight {
+.seven,
+.eight {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -211,22 +241,28 @@ img {
   font-size: 3em;
   margin: 0;
   text-transform: uppercase;
+  color: #ff6f61;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .wish h5 {
   font-size: 2rem;
   font-weight: lighter;
   margin: 10px 0 0;
+  color: #555;
 }
 
 .nine p {
   font-size: 2rem;
   font-weight: lighter;
+  color: #555;
 }
 
 #replay {
   cursor: pointer;
   z-index: 3;
+  color: #ff6f61;
+  text-decoration: underline;
 }
 
 /* Media Queries */
@@ -277,7 +313,6 @@ img {
   }
 
   .six .hat {
-    /* top: -20px; */
     width: 50px;
   }
 
